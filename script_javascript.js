@@ -3,7 +3,7 @@ const { SocketClientTCP } = require('netlinkwrapper')
 const host = '192.168.1.89'
 const port = 13001
 const password = 'SHOWMETHEMONEY'
-const cmd = 'IS_SERVER_UP'
+const cmd = 'USER_COUNT'
 
 /*
 cmd variable can be:
@@ -31,15 +31,21 @@ client.send(`\x40${password}\n`)
 client.receive()
 
 client.send(`\x40${cmd}\n`)
-received = client.receive().toString().replace(/\r?\n|\r/, '')
+received = client.receive()
 
-if (!isNaN(Number(received.charAt(0)))) {
-    const userCount = received.replace(/\s/g, '')
-    console.log(`Total[${userCount[0]}] ${userCount[1]} / ${userCount[2]} / ${userCount[3]} (this server ${userCount[4]})`)
-} else if (received === 'UNKNOWN') {
-    console.log('Command sent and executed with no custom response')
+if (received) {
+    received = received.toString().replace(/\r?\n|\r/, '')
+
+    if (!isNaN(Number(received.charAt(0)))) {
+        const userCount = received.replace(/\s/g, '')
+        console.log(`Total[${userCount[0]}] ${userCount[1]} / ${userCount[2]} / ${userCount[3]} (this server ${userCount[4]})`)
+    } else if (received === 'UNKNOWN') {
+        console.log('Command sent and executed with no custom response')
+    } else {
+        console.log(received)
+    }
 } else {
-    console.log(received)
+    console.log('An error occurred.')
 }
 
 client.disconnect()

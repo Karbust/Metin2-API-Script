@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DiscordProjectSettings">
-    <option name="show" value="DISABLE" />
+    <option name="show" value="PROJECT_FILES" />
+    <option name="nameOverrideEnabled" value="true" />
+    <option name="nameOverrideText" value="Metin2 API Script" />
+    <option name="description" value="A script to interact with the Metin2 API." />
   </component>
 </project>
