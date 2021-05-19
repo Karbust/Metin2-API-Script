@@ -37,7 +37,7 @@ if (received) {
     received = received.toString().replace(/\r?\n|\r/, '')
 
     if (!isNaN(Number(received.charAt(0)))) {
-        const userCount = received.replace(/\s/g, '')
+        const userCount = received.split(/[ ]+/)
         console.log(`Total[${userCount[0]}] ${userCount[1]} / ${userCount[2]} / ${userCount[3]} (this server ${userCount[4]})`)
     } else if (received === 'UNKNOWN') {
         console.log('Command sent and executed with no custom response')
