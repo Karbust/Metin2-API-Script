@@ -9,7 +9,7 @@ Install Yarn: https://yarnpkg.com/getting-started/install
 
 Clone the repository:
 ```bash
-git clone https://github.com/Karbust/Metin2-Patcher-Electron
+git clone https://github.com/Karbust/Metin2-API-Script
 ```
 Install the dependencies:
 
