@@ -2,6 +2,8 @@
 
 A script to interact with the Metin2 API.
 
+[![Metin2 API Script](https://img.youtube.com/vi/JTxWRCFaO8Y/0.jpg)](https://www.youtube.com/watch?v=JTxWRCFaO8Y "Metin2 API Script")
+
 ## Getting Started
 
 Install NodeJS: https://nodejs.org/en/download/ \
